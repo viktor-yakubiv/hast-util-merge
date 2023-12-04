@@ -1,0 +1,12 @@
+{
+  "name": "hast-util-merge",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "hast utility to consolidate trees",
+  "author": "Viktor Yakubiv (www.yakubiv.com)",
+  "license": "MIT",
+  "exports": "./index.js",
+  "files": [
+    "index.js"
+  ]
+}
