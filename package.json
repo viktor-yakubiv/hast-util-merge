@@ -8,5 +8,13 @@
   "exports": "./index.js",
   "files": [
     "index.js"
-  ]
+  ],
+  "devDependencies": {
+    "@types/lodash.merge": "^4.6.9"
+  },
+  "dependencies": {
+    "hast-util-is-element": "^3.0.0",
+    "hast-util-select": "^6.0.2",
+    "lodash.merge": "^4.6.2"
+  }
 }
