@@ -1,14 +1,22 @@
+import assert from 'node:assert/strict'
 import { select } from 'hast-util-select'
-import { isElement } from 'hast-util-is-element'
+import {
+	extract as extractSlots,
+	replace as injectSlots,
+} from 'hast-util-slots'
 import mergeHead from './lib/head'
+import { convert } from 'unist-util-is'
+
+const isDocumentRootChildren = convert([
+	{ type: 'doctype' },
+	{ type: 'element', tagName: 'html' },
+])
+
+// Document would certainly have a doctype or html element inside of root
+const isDocument = node => node.children.some(isDocumentRootChildren)
 
 const mergeTrees = (target, ...trees) => trees.reduce((target, source) => {
-	// Document would certainly have a doctype as the first node
-	// while fragment would not
-	const isFragment = target.children
-		.some(node => isElement(node, ['doctype', 'html']))
-
-	if (!isFragment) {
+	if (isDocument(target)) {
 		const targetHead = select('head', target)
 		const sourceHead = select('head', source)
 		assert(targetHead && sourceHead,
