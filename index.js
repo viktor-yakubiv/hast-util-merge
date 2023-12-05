@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict'
 import { select } from 'hast-util-select'
+import { convert } from 'unist-util-is'
 import {
 	extract as extractSlots,
 	replace as injectSlots,
 } from 'hast-util-slots'
-import mergeHead from './lib/head'
-import { convert } from 'unist-util-is'
+import mergeHead from './lib/head.js'
 
 const isDocumentRootChildren = convert([
 	{ type: 'doctype' },
