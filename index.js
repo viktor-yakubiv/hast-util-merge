@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { convert } from 'unist-util-is'
+import { select } from 'hast-util-select'
 import mergeNodes from './lib/merge.js'
 
 const isDocumentRootChildren = convert([
