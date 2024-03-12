@@ -1,7 +1,7 @@
 {
   "name": "hast-util-merge",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "hast utility to consolidate trees",
   "author": "Viktor Yakubiv (www.yakubiv.com)",
   "license": "MIT",
