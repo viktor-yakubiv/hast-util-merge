@@ -7,6 +7,8 @@
   "license": "MIT",
   "exports": "./index.js",
   "files": [
+    "lib/*.js",
+    "!lib/*.spec.js",
     "index.js"
   ],
   "devDependencies": {
